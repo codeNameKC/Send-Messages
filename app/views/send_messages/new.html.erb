@@ -1,0 +1,25 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Send Messages</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/">Home</a>
+        <a class="nav-item nav-link active" href="/send_messages/new">Nexmo <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/send_emails/new">Sendgrid</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+    <div class="container">
+    <h1>Send SMS</h1>
+
+    <%= render 'form', send_message: @send_message %>
+
+    <%= link_to 'View all messages', send_messages_path %>
+    </div>
+</main>

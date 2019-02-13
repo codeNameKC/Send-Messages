@@ -1,0 +1,44 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/send_messages/new">Nexmo</a>
+        <a class="nav-item nav-link" href="/send_email">Sendgrid</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Phonenumber:</strong>
+  <%= @send_message.PhoneNumber %>
+</p>
+
+<textarea>
+  <strong>Message:</strong>
+  <%= @send_message.Message %>
+</textarea>
+
+<%= link_to 'Edit', edit_send_message_path(@send_message) %> |
+<%= link_to 'Back', send_messages_path %>
+<%
+
+client = Nexmo::Client.new(
+  api_key: '2bbc3633',
+  api_secret: 'i3x12mrylgDbHKWC'
+)
+
+client.sms.send(
+  from: 'Acme Inc',
+  to: '+4593859236',
+  text: 'A text message sent using the Nexmo SMS API'
+)
+
+%>

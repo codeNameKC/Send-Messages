@@ -1,0 +1,20 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Send Messages</a>
+      <div class="tab">
+        <button class="right"><a class="nav-item nav-link" href="/send_messages/new">Nexmo <span class="sr-only">(current)</span></a></button>
+        <button><a class="nav-item nav-link active" href="/send_emails/new"><strong>Sendgrid</strong></a></button>
+      </div>
+  </nav>
+</header>
+
+
+<main>
+    <div class="container">
+        <h1>New Send Email</h1>
+
+        <%= render 'form', send_email: @send_email %>
+
+        <%= link_to 'Back', send_emails_path %>
+    </div>
+</main>

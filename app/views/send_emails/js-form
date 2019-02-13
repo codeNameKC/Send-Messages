@@ -1,0 +1,14 @@
+<form>
+<label> Recipient of Email
+  <input>
+  <label>Your message<label>
+  <textarea></textarea>
+  <button type="submit">Submit</button>
+<form>
+
+<script> 
+
+</script>
+
+
+

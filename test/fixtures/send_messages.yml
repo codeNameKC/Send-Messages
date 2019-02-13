@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  PhoneNumber: 1
+  Message: MyString
+
+two:
+  PhoneNumber: 1
+  Message: MyString

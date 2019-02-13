@@ -1,0 +1,32 @@
+// Place all the styles related to the SendEmails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./helpers/sass_assets.scss";
+
+body, html {
+   @extend %full-size; 
+}
+
+main {
+    background-color: $background-color;
+
+    div.container {
+        @extend %full-size; 
+        background-color: $background-color; 
+    } 
+}
+
+input {
+    height: 15%;
+    width: 100%;
+    padding: 3rem; 
+    border-radius: 3px; 
+    font-size: 3rem;
+    color: black;
+    text-size-adjust: 3rem;
+}
+
+label {
+    font-size: 3rem; 
+}
+

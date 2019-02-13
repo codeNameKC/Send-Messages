@@ -1,0 +1,2 @@
+class SendEmail < ApplicationRecord
+end

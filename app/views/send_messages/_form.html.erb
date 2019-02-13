@@ -1,0 +1,29 @@
+<%= form_with(model: send_message, local: true, :html => {:class => 'SMS-form'}) do |form| %>
+  
+  <% if send_message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(send_message.errors.count, "error") %> 
+      prohibited this send_message from being saved:</h2>
+
+      <ul>
+      <% send_message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :PhoneNumber %>
+    <%= form.number_field :PhoneNumber, :autofocus=>true, :placeholder=>"+45123456..." %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Message %>
+    <%= form.text_field :Message, :autofocus=>true, :placeholder=>"Dear John Doe..." %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

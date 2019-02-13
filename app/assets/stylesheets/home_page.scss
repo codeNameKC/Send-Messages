@@ -1,0 +1,48 @@
+// Place all the styles related to the HomePage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Mobile first design
+
+@import "./helpers/sass_assets.scss";
+
+body, html {
+   @extend %full-size; 
+}
+
+main {
+    height: 80%;
+    width: 100%; 
+    div.container {
+        background-color: $background-color;
+        @extend %full-size; 
+        @include centering(column);
+        a {
+            @extend %full-size; 
+            @include centering(column);
+            text-decoration: none; 
+        }
+    }
+}
+
+
+button.switch {
+    height: 85%;
+    width: 80%; 
+    background-color: $button-color;
+    color: white; 
+    border-radius: 400px;
+    font-size: 7.5rem;
+    margin: 2rem; 
+    display: inline-block;
+}
+
+button.switch:hover {
+    background-color: rgb(187, 9, 187);
+}
+
+.full-size {
+    display: block;
+    
+    height: 200px; 
+}
