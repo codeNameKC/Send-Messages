@@ -28,17 +28,3 @@
 
 <%= link_to 'Edit', edit_send_message_path(@send_message) %> |
 <%= link_to 'Back', send_messages_path %>
-<%
-
-client = Nexmo::Client.new(
-  api_key: '2bbc3633',
-  api_secret: 'i3x12mrylgDbHKWC'
-)
-
-client.sms.send(
-  from: 'Acme Inc',
-  to: '+4593859236',
-  text: 'A text message sent using the Nexmo SMS API'
-)
-
-%>

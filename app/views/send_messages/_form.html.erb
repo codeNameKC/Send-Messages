@@ -1,4 +1,4 @@
-<%= form_with(model: send_message, local: true, :html => {:class => 'SMS-form'}) do |form| %>
+<%= form_with(model: send_message, :html => {:id => 'sms-form'}) do |form| %>
   
   <% if send_message.errors.any? %>
     <div id="error_explanation">
@@ -15,15 +15,15 @@
 
   <div class="field">
     <%= form.label :PhoneNumber %>
-    <%= form.number_field :PhoneNumber, :autofocus=>true, :placeholder=>"+45123456..." %>
+    <%= form.number_field :PhoneNumber, :autofocus=>true, :id=>"phoneNumber", :placeholder=>"+45123456..." %>
   </div>
 
   <div class="field">
     <%= form.label :Message %>
-    <%= form.text_field :Message, :autofocus=>true, :placeholder=>"Dear John Doe..." %>
+    <%= form.text_area :Message, :autofocus=>true, :id=>"phoneMessage", :placeholder=>"Dear John Doe..." %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit value:"Send SMS", id:"submit-sms" %>
   </div>
 <% end %>

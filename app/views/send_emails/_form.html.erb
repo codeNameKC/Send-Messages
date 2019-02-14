@@ -1,4 +1,4 @@
-<%= form_with(model: send_email, local: true) do |form| %>
+<%= form_with(model: send_email, :html => {:id => 'email-form' }) do |form| %>
   <% if send_email.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(send_email.errors.count, "error") %> prohibited this send_email from being saved:</h2>
@@ -13,15 +13,16 @@
 
   <div class="field">
     <%= form.label :Email %>
-    <%= form.text_field :Email, :autofocus=>true, :placeholder=>"example@gmail.com"  %>
+    <%= form.text_field :Email, :class=>"w-100", :autofocus=>true, :placeholder=>"example@gmail.com", :id=>"email"  %>
   </div>
 
   <div class="field">
     <%= form.label :Message %>
-    <%= form.text_field :Message, :autofocus=>true, :placeholder=>"Dear John Doe..." %>
+    <%= form.text_area :Message, :autofocus=>true, :placeholder=>"Dear John Doe...", :id=>"message" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+     <%= form.submit value:"Send Email", id:"submit-button" %>
+     <p id="notice"><%= notice %></p>
   </div>
 <% end %>

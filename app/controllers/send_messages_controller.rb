@@ -25,11 +25,21 @@ class SendMessagesController < ApplicationController
   # POST /send_messages.json
   def create
     @send_message = SendMessage.new(send_message_params)
-
+    
+    client = Nexmo::Client.new(
+      api_key: '2bbc3633',
+      api_secret: 'i3x12mrylgDbHKWC'
+    )
+    
+    client.sms.send(
+      from: 'Acme Inc',
+      to: @send_message.PhoneNumber,
+      text: @send_message.Message
+    )
+  
     respond_to do |format|
       if @send_message.save
-        format.html { redirect_to @send_message, notice: 'Send message was successfully created.' }
-        format.json { render :show, status: :created, location: @send_message }
+        format.json { render json: 'Send email was successfully created', status: :created, location: @send_message }
       else
         format.html { render :new }
         format.json { render json: @send_message.errors, status: :unprocessable_entity }
