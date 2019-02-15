@@ -4,11 +4,11 @@
 
 @ajaxSmsListener = -> 
     $(document).ready -> 
-        $("#sms-form").on("ajax:success", (event) -> 
-         console.log("listening for ajax response")
-         [data, status, xhr] = event.detail
+        $("#sms-form").on("ajax:success", (event) ->
+         event.preventDefault()
          serverResponse.style.color = 'green'
          $("#serverResponse").html("Successfully sent SMS!") 
         ).on "ajax:error", (event) ->
             $("#serverResponse").html("There was an error with your request") 
+            event.preventDefault()
             serverResponse.style.color = 'red'

@@ -2,12 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
+
 @ajaxEmailListener = -> 
     $(document).ready -> 
         $("#email-form").on("ajax:success", (event) -> 
-        [data, status, xhr] = event.detail
-        $("#serverResponse").html("Successfully sent email!") 
-        serverResponse.style.color = 'green'
+         sendgridResponse.style.color = 'green'
+         $("#sendgridResponse").html("Successfully sent email!") 
         ).on "ajax:error", (event) ->
-        $("#serverResponse").html("There was an error with your request") 
-        serverResponse.style.color = 'red'
+         sendgridResponse.style.color = 'red'
+         $("#sendgridResponse").html("There was an error with your request") 
