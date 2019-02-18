@@ -18,7 +18,6 @@ class SendEmailsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to send_email_url(SendEmail.last)
   end
 
-
     assert_redirected_to send_emails_url
   end
 end
